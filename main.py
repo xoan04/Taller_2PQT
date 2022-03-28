@@ -3,7 +3,7 @@ from pickle import TRUE
 import sys
 import random
 from PySide6 import QtCore, QtWidgets, QtGui
-from Alfabeto import Alfabeto
+from Clases import Alfabeto,Lenguaje
 from gtts import gTTS
 
 
@@ -113,36 +113,4 @@ if __name__ == "__main__":
 
         main_list.append(objeto)
     menu()
-
-
-
-"""
-    cadAlfabeto = "AAA BBB CCC"
-    cadAlfabeto.split(sep=" ")
-    cadAlfabeto = verificarAlfabeto(cadAlfabeto)
-    main_list.append(Alfabeto(cadAlfabeto))
-
-    cadAlfabeto = "111 222 333"
-    cadAlfabeto.split(sep=" ")
-    cadAlfabeto = verificarAlfabeto(cadAlfabeto)
-    main_list.append(Alfabeto(cadAlfabeto))
-
-    cadAlfabeto = "+++ +++ ---"
-    cadAlfabeto.split(sep=" ")
-    cadAlfabeto = verificarAlfabeto(cadAlfabeto)
-    main_list.append(Alfabeto(cadAlfabeto))
-"""
-
-
-"""
-    cadena1 = "abc def ghi jkl mno"     #str(input("Ingrese la cadena numero "+str(numero)+": ").split(sep=","))
-    cadena1 = cadena1.split(" ")
-    cadena2 = "123 456 789"     #str(input("Ingrese la cadena numero "+str(numero)+": ").split(sep=","))
-    cadena2 = cadena2.split(" ")
-    cadena3 = "+- */ ¿? !! $%"     #str(input("Ingrese la cadena numero "+str(numero)+": ").split(sep=","))
-    cadena3 = cadena3.split(" ")
-    main_list.append(cadena1)
-    main_list.append(cadena2)
-    main_list.append(cadena3)
-"""
 
