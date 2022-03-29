@@ -3,10 +3,9 @@ class Alfabeto:
     
     def __init__(self, cadena):
         self.cadenaAlfabeto = self.verificarAlfabeto(cadena)
-        self.contenedorCadena = cadena
 
     def getCadenaAlfabeto(self):
-        return self.contenedorCadena
+        return self.cadenaAlfabeto
 
     def __repr__(self):
         return str(self.cadenaAlfabeto)
