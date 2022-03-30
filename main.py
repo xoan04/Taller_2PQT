@@ -83,11 +83,12 @@ def menu():
     #           speach("Ingrese el primer alfabeto: ")
                 indice = int(input("Ingrese el alfabeto sobre el que quiere generear el lenguaje: "))
                 cantidad = int(input("Ingrese la cantidad de palabras que desea generar en el lenguaje: "))
-                if indice <= cantidadAlfb:
+    
+                    
                 #   speach("La union de los alfabetos "+str(indice1)+" y "+str(indice2)+" es: ")
-                    print ("El lenguaje "+str(indice)+" es: ")
-                    print(generar_lenguage(Lista_Lenguaje[indice].getcadLenguage(), cantidad))
-                    os.system("PAUSE")
+                print ("El lenguaje "+str(indice)+" es: ")
+                print(generar_lenguage(main_Lenguaje[indice-1].getcadLenguage(),cantidad))
+                os.system("PAUSE")
 
             case 9:
                 for i in range(cantidadAlfb):
@@ -162,19 +163,20 @@ def cerradura_alfabeto(lista,cant_palabras):
 
 def generar_lenguage(lista,Cant_PalabrasLeng):
     Lista_Lenguaje=[]
-    for i in range(Cant_PalabrasLeng):
+    for i in range(Cant_PalabrasLeng-1):
         palabra = ""
-        for j in range(random.randint(1, 55)):
-            palabra += str(lista[random.randint(0, len(lista))])
+        for j in range(random.randint(2, 55)):
+            palabra += str(lista[random.randint(0, len(lista)-1)])
             if palabra not in Lista_Lenguaje and len(Lista_Lenguaje) < Cant_PalabrasLeng:
                 Lista_Lenguaje.append(palabra)
-    print(Lista_Lenguaje)
-    Lista_Lenguaje.append(Lista_Lenguaje)
+        
+    return Lista_Lenguaje
+   
 
 
 if __name__ == "__main__":
     main_list = []
-    Lista_Lenguaje=[]
+    main_Lenguaje=[]
     bandera=0
     bandera2=0
 #    Lista_Union=[]
@@ -190,11 +192,16 @@ if __name__ == "__main__":
             #speach("ingrese su cadena número "+str(i+1)+" separada por espacios:")
             cadAlfabeto = ""
             cadAlfabeto = input("ingrese su cadena número "+str(i+1)+" separada por espacios: ").split(" ")
+            cadLenguaje=""
+            cadLenguaje=cadAlfabeto
             if cadAlfabeto.__contains__(""):
                 main_list.append(Alfabeto("λ"))
             else:
                 objeto = Alfabeto(cadAlfabeto)
+                objeto2 = Lenguaje(cadLenguaje)
+                objeto2=objeto
                 main_list.append(objeto)
+                main_Lenguaje.append(objeto2)
             
         borrarPantalla = lambda: os.system ("cls")
         bandera=1
