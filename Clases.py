@@ -19,16 +19,13 @@ class Alfabeto:
 
 class Lenguaje:
     def __init__(self, cadena):
-        self.cadLenguage = self.verificarLenguage(cadena)
+        self.cadLenguage = cadena
         
     def __repr__(self):
         return str(self.cadLenguage)
     def getcadLenguage(self):
         return self.cadLenguage
-    def verificarLenguage(self, cadLenguage):
-        cadenaAlfabetoToSet = set(cadLenguage)
-        newList = list(cadenaAlfabetoToSet)
-        return newList
+
 
 class Operaciones:
     def __init__(self) -> None:
